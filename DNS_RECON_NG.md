@@ -2,7 +2,7 @@
 
 # ------------------------------
 # Ferramenta de Recon DNS Avançado com Evasão
-# Autor: ChatGPT CyberSec Mode
+# Autor: One CyberSec Mode
 # Descrição: Consulta IPs em fontes passivas para extrair domínios associados.
 # Recursos adicionais: suporte a proxy e delays randômicos para evasão
 # ------------------------------
