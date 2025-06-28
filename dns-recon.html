@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS Recon Ultra - Tutorial de Consulta de Domínios por IP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 1rem;
+    }
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    code, pre {
+      background: #eee;
+      padding: 0.5rem;
+      display: block;
+      margin: 0.5rem 0;
+      border-left: 4px solid #00bcd4;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DNS Recon Ultra</h1>
+    <p>Passo a passo para descobrir domínios e subdomínios a partir de IPs públicos</p>
+  </header>
+
+  <section>
+    <h2>1. Ferramentas de Linha de Comando</h2>
+
+    <h3>1.1 dig (DNS Lookup)</h3>
+    <pre><code>dig -x 192.0.2.123 +short</code></pre>
+    <p>Realiza uma consulta reversa DNS (PTR).</p>
+
+    <h3>1.2 nslookup</h3>
+    <pre><code>nslookup 192.0.2.123</code></pre>
+    <p>Outra forma de buscar o domínio reverso de um IP.</p>
+
+    <h3>1.3 nmap</h3>
+    <pre><code>nmap -sV -Pn 192.0.2.123</code></pre>
+    <p>Detecta serviços e, possivelmente, nomes de host via banners.</p>
+
+    <h3>1.4 curl + APIs externas</h3>
+    <pre><code>curl https://api.hackertarget.com/reverseiplookup/?q=192.0.2.123</code></pre>
+    <p>Consulta simples de domínios associados ao IP via API da HackerTarget.</p>
+
+    <pre><code>curl -H "apikey: SUA_API_KEY" https://api.securitytrails.com/v1/search/list -d '{"filter":{"ipv4":"192.0.2.123"}}'</code></pre>
+    <p>Consulta mais detalhada via SecurityTrails.</p>
+  </section>
+
+  <section>
+    <h2>2. Ferramentas e Serviços Online</h2>
+
+    <ul>
+      <li>
+        <strong><a href="https://www.virustotal.com/gui/ip-address/192.0.2.123" target="_blank">VirusTotal IP Lookup</a></strong><br>
+        <span>Consulta domínios, certificados SSL, roteamento e relações históricas com o IP.</span>
+      </li>
+      <li>
+        <strong><a href="https://securitytrails.com/list/ip/192.0.2.123" target="_blank">SecurityTrails IP Search</a></strong><br>
+        <span>Histórico de domínios relacionados ao IP, com informações WHOIS e DNS.</span>
+      </li>
+      <li>
+        <strong><a href="https://www.shodan.io/host/192.0.2.123" target="_blank">Shodan Host Info</a></strong><br>
+        <span>Exibe serviços e domínios vinculados ao IP com base em fingerprint de rede.</span>
+      </li>
+      <li>
+        <strong><a href="https://viewdns.info/reverseip/?host=192.0.2.123" target="_blank">ViewDNS Reverse IP Lookup</a></strong><br>
+        <span>Consulta reversa gratuita baseada em registros DNS públicos.</span>
+      </li>
+      <li>
+        <strong><a href="https://dnsdumpster.com/" target="_blank">DNSDumpster</a></strong><br>
+        <span>Plataforma visual que retorna domínios, subdomínios e servidores expostos.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Dica Extra</h2>
+    <p>Para grandes volumes de IPs, utilize scripts em bash com <code>curl</code> e <code>jq</code>, ou ferramentas como <a href="https://github.com/onecio/DNS_Recon_Ultra" target="_blank">DNS Recon Ultra</a>, que já automatizam todo o processo.</p>
+  </section>
+
+  <section>
+    <h2>4. Exemplo de IPs para Teste</h2>
+    <ul>
+      <li>192.0.2.123</li>
+      <li>203.0.113.55</li>
+      <li>198.51.100.10</li>
+    </ul>
+    <p>Estes são IPs reservados para documentação e testes.</p>
+  </section>
+
+  <footer style="text-align:center; margin: 3rem 0; color: #666">
+    Desenvolvido para fins educacionais e OSINT por ChatGPT • 2025
+  </footer>
+</body>
+</html>
