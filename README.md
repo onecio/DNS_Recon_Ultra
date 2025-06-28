@@ -1,5 +1,5 @@
 # DNS Recon Ultra - Consulta Passiva de IPs Públicos
-
+# DNS Recon NG - Furtivo com Técnicas Proxy Avançada
 Script shell para realizar reconhecimento passivo de domínios e subdomínios associados a endereços IPv4 públicos, utilizando APIs do VirusTotal, SecurityTrails e Hackertarget.
 
 ---
