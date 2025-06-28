@@ -1,5 +1,5 @@
 #!/bin/bash
-
+## DNS RECON FURTIVO - Técnicas Proxy Avançada ###
 # ------------------------------
 # Ferramenta de Recon DNS Avançado com Evasão
 # Autor: One CyberSec Mode
